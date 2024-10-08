@@ -1,0 +1,10 @@
+<p>MENU</p>
+
+
+<div *ngFor="let produits of Produits$ | async" class="menu-card">
+  <h2> {{produits.title}}</h2>
+  <div>{{produits.description}}</div>
+  <img [src]="produits.imageurl" [alt]="produits.title">
+</div>
+
+

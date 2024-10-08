@@ -1,0 +1,29 @@
+.container-footer {
+    background-color: RGB(61 13 0);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+
+    p {
+        color: white;
+        align-self: flex-start;
+
+
+    }
+
+    img {
+
+        height: 110px;
+
+        justify-self: left;
+    }
+
+
+
+}

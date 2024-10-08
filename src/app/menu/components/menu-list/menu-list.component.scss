@@ -1,0 +1,38 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h2,
+h3 {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu-card {
+    display: inline-grid;
+    box-sizing: border-box;
+    width: 288px;
+    height: 290px;
+    padding: 10px 30px;
+    box-shadow: lightgray 4px 4px 20px;
+
+    img {
+        
+        width: 200px;
+        height: 195px;
+    }
+
+
+    
+}
+p{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size:  20px;
+}

@@ -1,0 +1,75 @@
+label {
+
+    font-size: 20px;
+}
+
+
+
+.Marche-div {
+    display: inline-grid;
+    box-sizing: border-box;
+    width: 288px;
+    height: 288px;
+    padding: 10px 30px;
+    box-shadow: lightgray 4px 4px 20px;
+
+    img {
+        
+        width: 195px;
+        height: 195px;
+    }
+
+
+    
+
+}
+p{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.fa {
+    padding: 20px;
+    text-align: center;
+    margin: 5px 2px;
+    font-size: 30px;
+    width: 150px;
+}
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+    background: #e45f17;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.img-container {
+    display: flex;
+
+
+
+    height: 25rem;
+    width: 27rem;
+}
+
+img {
+    height: 25rem;
+    width: 27rem;
+    flex-wrap: wrap;
+
+}
+
+.RS-div {
+    //justify-self: flex-end;
+    display: flex;
+}

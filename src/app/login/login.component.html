@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="form-card">
+    <h2>Inscription</h2>
+    <form [formGroup]="InscriptionForm">
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input id="Nom" type="text" formControlName="Nom">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input id="Email" type="mail" formControlName="Email">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="mdp">Mot de passe</label>
+        <input id="mdp" type="text" formControlName="mdp">
+      </div>
+      <br>
+
+
+
+      <div class="action-buttons">
+      <button type="submit" (click)="register()" [disabled]="InscriptionForm.invalid">inscription</button>
+      </div>
+    </form>
+  </div>
+  <br>
+
+    <div class="container">
+      <div class="form-card">
+        <h2>Connexion</h2>
+        <form [formGroup]="ConnexionForm">
+
+
+          <div class="form-group">
+            <label for="Username">Email</label>
+            <input id="Username" type="mail" formControlName="Email">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="text" formControlName="password">
+          </div>
+          <br>
+
+          <div class="action-buttons">
+            <button type="submit" (click)="login()" [disabled]="ConnexionForm.invalid">connexion</button>
+
+            <button type="submit" (click)="logout()" >deconnexion</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+

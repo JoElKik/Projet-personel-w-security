@@ -1,0 +1,29 @@
+<div class="form-card">
+  <h2>Contact</h2>
+  <form [formGroup]="contactForm">
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <input id="Nom" type="text" formControlName="Nom">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="Prenom">Prenom</label>
+      <input id="Prenom" type="text" formControlName="Prenom">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="Adresse">Adresse</label>
+      <input id="Adresse" type="text" formControlName="Adresse">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input id="Email" type="mail" formControlName="Email">
+    </div>
+    <br>
+
+    <div class="action-buttons">
+      <button type="submit" (click)="onSubmitForm()" [disabled]="contactForm.invalid">Enregistrer</button>
+    </div>
+  </form>
+</div>
