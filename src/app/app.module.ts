@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { FormContactComponent } from './form-contact/form-contact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { FormContactComponent } from './form-contact/form-contact.component';
     BrowserAnimationsModule,
     CoreModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   exports: [
     AppComponent,

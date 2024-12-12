@@ -18,6 +18,7 @@ import java.util.Optional;
 public class UtilisateurService implements UserDetailsService {
   private UtilisateurRepository utilisateurRepository;
   private BCryptPasswordEncoder passwordEncoder;
+  // private ValidationService validationService;
   public void inscription(Utilisateur utilisateur) {
     if (!utilisateur.getEmail().contains("@") ){
       throw new RuntimeException("Email invalide");
@@ -37,8 +38,8 @@ public class UtilisateurService implements UserDetailsService {
     Role roleUtilisateur = new Role();
     roleUtilisateur.setLibelle(TypeDeRole.UTILISATEUR);
     utilisateur.setRole(roleUtilisateur);
-    this.utilisateurRepository.save(utilisateur);
-
+    utilisateur = this.utilisateurRepository.save(utilisateur);
+    // this.validationService.enregistrer(utilisateur);
 
   }
 
@@ -49,4 +50,11 @@ public class UtilisateurService implements UserDetailsService {
         .orElseThrow(()-> new UsernameNotFoundException("Aucun utilisateur ne correspond a cet identifiant"));
 
   }
+  public String getNom(String username) {
+    Utilisateur utilisateur = loadUserByUsername(username);
+  
+    return utilisateur.getNom();
+  }
+
+
 }

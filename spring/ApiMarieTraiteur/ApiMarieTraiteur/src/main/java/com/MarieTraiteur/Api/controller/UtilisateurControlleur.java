@@ -13,6 +13,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @CrossOrigin(origins = "http://localhost:4200")
 @Slf4j
@@ -44,9 +47,26 @@ public class UtilisateurControlleur {
 
     if(authenticate.isAuthenticated()){
        return this.jwtService.generate(authentificationDTO.username());
+       
     }
 
 
     return null;
+  }
+
+  @GetMapping(path = "connexion")
+  public String getNom(@RequestBody AuthentificationDTO authentificationDTO) {
+    Authentication authenticate = authenticationManager.authenticate(
+      new UsernamePasswordAuthenticationToken(authentificationDTO.username(), authentificationDTO.password())
+    );
+
+   
+      String nom = this.jwtService.getNom(authentificationDTO.username());
+       return nom;
+       
+    
+
+
+   
   }
 }

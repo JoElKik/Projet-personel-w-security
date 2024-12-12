@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit{
   }
 
   login(){
-    this.sessionLogin.login({pUsername: this.ConnexionForm.value.Email, pPassword: this.ConnexionForm.value.password}).subscribe(
+    this.sessionLogin.login({pUsername: this.ConnexionForm.value.Email,
+       pPassword: this.ConnexionForm.value.password}).subscribe(
       result=>{
-        console.log(this.ConnexionForm.value.password);
-        console.log(this.ConnexionForm.value.Email);
+                console.log("ok")
 
     }, error => {
 
@@ -53,6 +53,18 @@ export class LoginComponent implements OnInit{
     })
 
   }
+  getNom(){
+    this.sessionLogin.getNom({pUsername: this.ConnexionForm.value.Email,
+       pPassword: this.ConnexionForm.value.password}).subscribe(
+        result=>{
+                  console.log("ok")
+  
+      }, error => {
+  
+  
+      })
+  
+    }
   register(){
 
     this.sessionLogin.register({ pNom: this.InscriptionForm.value.Nom,pEmail: this.InscriptionForm.value.Email, pPassword: this.InscriptionForm.value.mdp}).subscribe(

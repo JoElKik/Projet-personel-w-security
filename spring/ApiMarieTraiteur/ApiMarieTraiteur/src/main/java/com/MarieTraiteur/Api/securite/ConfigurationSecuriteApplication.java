@@ -63,6 +63,8 @@ private final JwtFilter jwtFilter;
                                                 .requestMatchers(POST,"/connexion").permitAll()
                                                 .requestMatchers(POST,"/deconnexion").permitAll()
                                                 .requestMatchers(GET,"/api/produits").permitAll()
+                                                .requestMatchers(POST,"/api/contact").permitAll()
+                                                .requestMatchers(GET,"/connexion").permitAll()
 
 
 

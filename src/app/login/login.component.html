@@ -46,7 +46,7 @@
           <br>
 
           <div class="action-buttons">
-            <button type="submit" (click)="login()" [disabled]="ConnexionForm.invalid">connexion</button>
+            <button type="submit" (click)="login()" (click)="getNom()" [disabled]="ConnexionForm.invalid">connexion</button>
 
             <button type="submit" (click)="logout()" >deconnexion</button>
           </div>

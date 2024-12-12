@@ -56,7 +56,9 @@
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/Photos/ScriptPhoto.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -126,7 +128,9 @@
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/Photos/ScriptPhoto.js"
+            ]
           }
         }
       }
