@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
   emailRgex!: RegExp;
-  
 
   constructor(private formBuilder: FormBuilder,
     private router: Router) { }
@@ -26,7 +25,6 @@ export class ContactComponent implements OnInit {
       Adresse: [null, [Validators.required]]
 
     })
-    
 
 
   }
@@ -34,6 +32,5 @@ export class ContactComponent implements OnInit {
 
     console.log(this.contactForm.value)
   }
- 
 
 }

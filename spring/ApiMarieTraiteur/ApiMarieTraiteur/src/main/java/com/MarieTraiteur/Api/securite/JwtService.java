@@ -11,8 +11,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
-
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -31,7 +29,6 @@ public class JwtService {
   private final String ENCRIPTION_KEY = "608f36e92dc66d97d5933f0e6371493cb4fc05b1aa8f8de64014732472303a7c";
   private UtilisateurService utilisateurService;
   private JwtRepository jwtRepository;
-  
 
   public Map<String, String> generate(String username) {
     Utilisateur utilisateur = this.utilisateurService.loadUserByUsername(username);
@@ -44,11 +41,7 @@ public class JwtService {
       .utilisateur(utilisateur)
       .build();
     this.jwtRepository.save(jwt);
-    
     return jwtMap;
-  }
-  public String getNom(String username){
-    return this.utilisateurService.getNom(username);
   }
   public Jwt tokenByValeur(String value) {
     return this.jwtRepository.findByValeur(value)
@@ -73,8 +66,6 @@ public class JwtService {
     return function.apply(claims);
   }
 
-  
-
   private Claims getAllClaims(String token) {
     return Jwts.parser()
       .setSigningKey(this.getKey())
@@ -86,7 +77,7 @@ public class JwtService {
   private Map<String, String> generateJwt(Utilisateur utilisateur) {
     final long currentTime = System.currentTimeMillis(); //date de création
     final long expirationTime = currentTime + 30 * 60 * 1000; // temps d'expiration 30 min ici
-  
+
     final Map<String, Object> claims = Map.of(
       "nom", utilisateur.getNom(),
       Claims.EXPIRATION, new Date(expirationTime),

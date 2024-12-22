@@ -23,7 +23,6 @@ export class SessionLoginService {
     };
     return new Observable<boolean>((observer) => {
       this.httpClient.post(this.LOGIN_URL, loginData).subscribe(result => {
-        
         observer.next(true);
         observer.complete()
       },error => {
@@ -31,28 +30,6 @@ export class SessionLoginService {
         observer.complete();
         });
     })
-  }
-  getNom({pUsername, pPassword}: { pUsername: any,  pPassword: any }){
-    
-    const loginData={
-      username: pUsername,
-      password: pPassword  
-    };
-    
-    return new Observable<boolean>((observer) => {
-      this.httpClient.get(this.LOGIN_URL).subscribe(result => {
-        console.log("ok")
-        observer.error(true);
-        observer.complete();
-
-      },error => {
-        console.log("not ok")
-        observer.error(false);
-        observer.complete();
-        });
-    })
-    
-
   }
 
   register({pNom,pEmail,pPassword}: { pNom: any, pEmail: any, pPassword: any }){
@@ -84,5 +61,4 @@ export class SessionLoginService {
       })
     })
   }
-  
 }
